@@ -62,5 +62,5 @@ func (m MapStore) GetByID(s string) (domain.Customer, error) {
 		return m.store[s], nil
 	}
 	fmt.Println("\nKey doesn't exists, cannot find a customer")
-	return nil, errors.New("\nKey doesn't exists, cannot find a customer")
+	return m.store[s], errors.New("\nKey doesn't exists, cannot find a customer")
 }

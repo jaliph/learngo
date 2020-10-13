@@ -43,6 +43,7 @@ func (c CustomController) GetAll() {
 	fmt.Println("All Customers are")
 	fmt.Println(val)
 }
+
 func (c CustomController) GetById(s string) {
 	val, err := c.store.GetByID(s)
 	if err != nil {
@@ -62,4 +63,7 @@ func main() {
 		Name: "JFM",
 	}
 	controller.Add(customer)
+	controller.GetAll()
+	controller.GetById("01")
+	controller.GetById("02")
 }
