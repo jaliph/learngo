@@ -11,21 +11,21 @@ func main() {
 		store: []int{},
 	}
 
-	// // h2.store[1] = 4
+	// // // h2.store[1] = 4
 	fmt.Println(h2)
 	h2.insertValue(10)
 	h2.insertValue(11)
-	h2.insertValue(2)
-	h2.insertValue(22)
-	h2.insertValue(23)
-	fmt.Println(h2)
-	fmt.Println(h2.maximum())
+	// h2.insertValue(2)
+	// h2.insertValue(22)
+	// h2.insertValue(23)
+	// fmt.Println(h2)
+	// fmt.Println(h2.maximum())
 
 	// h2.store = h2.store[1:3]
 	// fmt.Println(h2)
 	// fmt.Println(len(h2.store))
 	// fmt.Println(cap(h2.store))
-
+	fmt.Println(h2)
 	// h.build_maxheap()
 	// fmt.Println(h.store)
 	// h.build_minheap()
@@ -36,6 +36,7 @@ type heap struct {
 	store []int
 }
 
+// gives the maxmimum element from the heap
 func (h *heap) maximum() int {
 	if len(h.store) < 2 {
 		return -1
@@ -43,6 +44,7 @@ func (h *heap) maximum() int {
 	return h.store[1]
 }
 
+// returns and removes the maximum
 func (h *heap) extractMaximum() int {
 	if len(h.store) < 2 {
 		fmt.Println("heap is empty")
@@ -55,13 +57,17 @@ func (h *heap) extractMaximum() int {
 	return max
 }
 
-func (h *heap) increaseValue(pos int, data int) {
+// maxHeap
+func (h *heap) setValueAtPos(pos int, data int) {
+
 	if data < h.store[pos] {
 		//not possible
 		fmt.Println("not a possible heap solution")
 		return
 	}
 	h.store[pos] = data
+	// pos/2 is parent of pos in the array
+	// then check for the next parent at pos/2 till we reach to absolute parent at 1
 	for pos > 1 && h.store[pos/2] < h.store[pos] {
 		h.store[pos/2], h.store[pos] = h.store[pos], h.store[pos/2]
 		pos /= 2
@@ -73,7 +79,7 @@ func (h *heap) insertValue(data int) {
 	if len(h.store) == 1 {
 		h.store = append(h.store, -1)
 	}
-	h.increaseValue(len(h.store)-1, data)
+	h.setValueAtPos(len(h.store)-1, data)
 }
 
 func (h *heap) build_maxheap() {
@@ -88,6 +94,7 @@ func (h *heap) build_minheap() {
 	}
 }
 
+// Process and Convert the array to HEAP
 func (h *heap) max_heapify(i int) {
 	var largest int
 	left := i * 2
