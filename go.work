@@ -4,5 +4,12 @@ use ./leetcode
 
 use (
 	./leetcode/basics
+	./leetcode/binarysearch
+	./leetcode/channels
+	./leetcode/cyclic
 	./leetcode/dp/1d
+	./leetcode/heap
+	./leetcode/maths
+	./leetcode/query
+	./leetcode/stacks
 )
