@@ -1,8 +1,8 @@
 package main
 
 import (
+	"basic"
 	"fmt"
-	"heap"
 )
 
 func main() {
@@ -10,17 +10,7 @@ func main() {
 	// fmt.Println(basic.GetSum(arr))
 
 	// arr := []int{3, 2, 1}
-	h := heap.NewHeap(nil)
-
-	h.Push(5)
-	h.Push(2)
-	h.Push(100)
+	h := basic.Constructor()
+	h.Put(4, 3)
 	fmt.Println(h)
-	fmt.Println(h.Peek())
-	fmt.Println(h.Pop())
-	fmt.Println(h.Pop())
-	fmt.Println(h.Pop())
-	fmt.Println(h.Pop())
-	fmt.Println(h)
-
 }

@@ -4,7 +4,7 @@ type NumArray struct {
 	arr []int
 }
 
-func Constructor(nums []int) NumArray {
+func Constructor1(nums []int) NumArray {
 	numArray := NumArray{
 		arr: make([]int, len(nums)),
 	}
