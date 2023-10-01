@@ -9,7 +9,9 @@ use (
 	./leetcode/cyclic
 	./leetcode/dp/1d
 	./leetcode/heap
+	./leetcode/linkedlist
 	./leetcode/maths
 	./leetcode/query
+	./leetcode/recursion
 	./leetcode/stacks
 )
