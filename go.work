@@ -7,7 +7,8 @@ use (
 	./leetcode/binarysearch
 	./leetcode/channels
 	./leetcode/cyclic
-	./leetcode/dp/1d
+	./leetcode/dp
+	./leetcode/gametheory
 	./leetcode/heap
 	./leetcode/linkedlist
 	./leetcode/maths

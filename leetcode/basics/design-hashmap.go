@@ -1,5 +1,6 @@
 package basic
 
+// https://leetcode.com/problems/design-hashmap/
 import "math"
 
 type HashNode struct {

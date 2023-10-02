@@ -1,5 +1,6 @@
 package basic
 
+// https://leetcode.com/problems/design-hashset/
 import "math"
 
 type Node struct {
