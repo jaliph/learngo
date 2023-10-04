@@ -1,9 +1,10 @@
 package main
 
 import (
-	"gametheory"
+	"maths"
 )
 
 func main() {
-	gametheory.Grundy2Runner()
+	maths.IsRobotBounded("LLGRL")
+
 }
