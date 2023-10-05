@@ -6,6 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(maths.ShiftGrid([][]int{{1, 2}, {2, 3}}, 1))
-
+	fmt.Println(maths.ShiftGrid([][]int{{1, 2}, {3, 4}}, 1))
 }

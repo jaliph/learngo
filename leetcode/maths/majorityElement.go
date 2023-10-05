@@ -1,4 +1,4 @@
-package basic
+package maths
 
 // https://leetcode.com/problems/majority-element
 func MajorityElement(nums []int) int {
