@@ -1,10 +1,10 @@
 package main
 
 import (
+	"dp"
 	"fmt"
-	"maths"
 )
 
 func main() {
-	fmt.Println(maths.ShiftGrid([][]int{{1, 2}, {3, 4}}, 1))
+	fmt.Println(dp.IntegerBreakDP(10))
 }
