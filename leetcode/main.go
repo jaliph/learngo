@@ -1,10 +1,9 @@
 package main
 
 import (
-	"dp"
-	"fmt"
+	"trie"
 )
 
 func main() {
-	fmt.Println(dp.IntegerBreakDP(10))
+	trie.Driver_Trie2D()
 }
