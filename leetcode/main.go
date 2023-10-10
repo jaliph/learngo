@@ -1,9 +1,11 @@
 package main
 
 import (
-	"trie"
+	"dp"
+	"fmt"
 )
 
 func main() {
-	trie.Driver_Trie2D()
+	fmt.Println(dp.MaxDotProductDP([]int{2, 1, -2, 5}, []int{3, 0, -6}))
+	fmt.Println(dp.MaxDotProductBrute([]int{3, -2}, []int{2, -6, 7}))
 }
