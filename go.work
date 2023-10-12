@@ -10,6 +10,7 @@ use (
 	./leetcode/dp
 	./leetcode/gametheory
 	./leetcode/graph
+	./leetcode/greedy
 	./leetcode/heap
 	./leetcode/intervals
 	./leetcode/linkedlist
