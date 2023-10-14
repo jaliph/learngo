@@ -1,7 +1,6 @@
 package dp
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -9,6 +8,12 @@ func jump(nums []int) int {
 	dest := len(nums) - 1
 
 	dp := make(map[int]int)
+	Min := func(a int, b int) int {
+		if a < b {
+			return a
+		}
+		return b
+	}
 
 	var solve func(i int) int
 	solve = func(i int) int {
@@ -28,7 +33,7 @@ func jump(nums []int) int {
 		for j := 1; j <= jumps; j++ {
 			subProb := solve(j + i)
 			if subProb != math.MaxInt {
-				ans = MinInt(ans, subProb+1)
+				ans = Min(ans, subProb+1)
 			}
 		}
 
@@ -37,15 +42,4 @@ func jump(nums []int) int {
 	}
 
 	return solve(0)
-}
-
-func MinInt(a int, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}
-
-func Driver() {
-	fmt.Println(jump([]int{2, 3, 1, 1, 4}))
 }
