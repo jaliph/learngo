@@ -5,7 +5,7 @@ import (
 )
 
 // Box Stacking
-func maxHeightBoxStack(cuboids [][]int) int {
+func MaxHeightBoxStack(cuboids [][]int) int {
 	sort.Slice(cuboids, func(i, j int) bool {
 		return cuboids[i][2] < cuboids[j][2]
 	})

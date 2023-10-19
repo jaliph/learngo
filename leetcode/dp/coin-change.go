@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/coin-change/
 package dp
 
-func coinChange(coins []int, amount int) int {
+func CoinChange(coins []int, amount int) int {
 	dp := make([]int, amount+1)
 
 	Min := func(a int, b int) int {

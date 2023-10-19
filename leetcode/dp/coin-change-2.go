@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/coin-change/
 package dp
 
-func change(amount int, coins []int) int {
+func Change(amount int, coins []int) int {
 	prev := make([]int, amount+1)
 	prev[0] = 1
 
@@ -22,7 +22,7 @@ func change(amount int, coins []int) int {
 	return prev[amount]
 }
 
-func change_2D_DP(amount int, coins []int) int {
+func Change_2D_DP(amount int, coins []int) int {
 	R, C := len(coins), amount+1
 	dp := make([][]int, R)
 

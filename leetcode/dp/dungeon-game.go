@@ -6,7 +6,7 @@ import (
 )
 
 // Binary Search
-func calculateMinimumHP(dungeon [][]int) int {
+func CalculateMinimumHP(dungeon [][]int) int {
 	R, C := len(dungeon), len(dungeon[0])
 
 	Max := func(a int, b int) int {
@@ -57,7 +57,7 @@ func calculateMinimumHP(dungeon [][]int) int {
 }
 
 // DP
-func calculateMinimumHP_DP(dungeon [][]int) int {
+func CalculateMinimumHP_DP(dungeon [][]int) int {
 	r, c := len(dungeon), len(dungeon[0])
 	m, n := r+1, c+1
 	fmt.Println(m, n)
@@ -78,17 +78,6 @@ func calculateMinimumHP_DP(dungeon [][]int) int {
 	for i := range grid {
 		grid[i] = rows[i*n : (i+1)*n]
 	}
-
-	Print2D := func(grid [][]int) {
-		for r := range grid {
-			for _, colValue := range grid[r] {
-				fmt.Print(colValue, " ")
-			}
-			fmt.Println()
-		}
-	}
-
-	Print2D(grid)
 
 	grid[r][c-1] = 1
 	grid[r-1][c] = 1

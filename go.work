@@ -1,4 +1,4 @@
-go 1.20
+go 1.21.3
 
 use ./leetcode
 
@@ -9,12 +9,14 @@ use (
 	./leetcode/cyclic
 	./leetcode/dp
 	./leetcode/gametheory
+	./leetcode/go-democracy
 	./leetcode/graph
 	./leetcode/greedy
 	./leetcode/heap
 	./leetcode/intervals
 	./leetcode/linkedlist
 	./leetcode/maths
+	./leetcode/prefixsum
 	./leetcode/query
 	./leetcode/recursion
 	./leetcode/rwhelper

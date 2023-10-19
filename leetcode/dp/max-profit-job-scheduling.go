@@ -1,7 +1,6 @@
 package dp
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -50,12 +49,4 @@ func jobScheduling(startTime []int, endTime []int, profit []int) int {
 	}
 
 	return solve(0)
-}
-
-func Driver() {
-	startTime := []int{1, 2, 3, 4, 6}
-	endTime := []int{3, 5, 10, 6, 9}
-	profit := []int{20, 20, 100, 70, 60}
-
-	fmt.Println(jobScheduling(startTime, endTime, profit))
 }

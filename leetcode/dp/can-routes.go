@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/count-all-possible-routes/
 package dp
 
-func countRoutes(locations []int, start int, finish int, fuel int) int {
+func CountRoutes(locations []int, start int, finish int, fuel int) int {
 
 	const MOD = 1e9 + 7
 	abs := func(a, b int) int {
