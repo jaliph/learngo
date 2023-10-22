@@ -6,7 +6,7 @@ type shortestStringState struct {
 }
 
 // DP
-func shortestSuperstring_DP(words []string) string {
+func ShortestSuperstring(words []string) string {
 	mask := 1<<len(words) - 1
 
 	Min := func(a int, b int) int {

@@ -33,7 +33,7 @@ func Adv_Heap_Test() {
 	Push(&p, NewPointer(1, 2))
 	Push(&p, NewPointer(0, 2))
 	Push(&p, NewPointer(3, 2))
-	fmt.Println(p.Pop())
+	fmt.Println(Pop(&p))
 	fmt.Println(p.Pop())
 	fmt.Println(p.Pop())
 	fmt.Println(p.Pop())

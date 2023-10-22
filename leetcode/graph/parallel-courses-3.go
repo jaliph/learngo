@@ -2,8 +2,6 @@
 
 package graph
 
-import "fmt"
-
 func MinimumTime_Graph(n int, relations [][]int, time []int) int {
 
 	q := []int{}
@@ -77,7 +75,6 @@ func minimumTime_DP(n int, relations [][]int, time []int) int {
 
 	var solve func(int) int
 	solve = func(i int) int {
-		fmt.Println(i)
 
 		if v, ok := memoise[i]; ok {
 			return v

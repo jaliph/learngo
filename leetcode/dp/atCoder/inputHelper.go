@@ -53,3 +53,10 @@ func ReadArrInt64(in *bufio.Reader) []int64 {
 	}
 	return arr
 }
+
+func ReadString(in *bufio.Reader) string {
+	line, _ := in.ReadString('\n')
+	line = strings.ReplaceAll(line, "\r", "")
+	line = strings.ReplaceAll(line, "\n", "")
+	return line
+}

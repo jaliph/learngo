@@ -9,7 +9,6 @@ use (
 	./leetcode/cyclic
 	./leetcode/dp
 	./leetcode/gametheory
-	./leetcode/go-democracy
 	./leetcode/graph
 	./leetcode/greedy
 	./leetcode/heap

@@ -5,8 +5,19 @@ import "fmt"
 // INVALID SOLUTION
 // https://leetcode.com/problems/find-the-shortest-superstring/solutions/195487/python-bfs-solution-with-detailed-explanation-with-extra-chinese-explanation/
 // TSP
-func ShortestSuperstring(words []string) string {
+type Node_SSS struct {
+	node    int
+	mask    int
+	paths   []int
+	overlap int
+}
 
+func NewNode_SSS(node, mask int, p []int, overlap int) Node_SSS {
+	return Node_SSS{node, mask, p, overlap}
+}
+
+func ShortestSuperstring(words []string) string {
+	n := len(words)
 	Min := func(a int, b int) int {
 		if a < b {
 			return a
@@ -14,144 +25,101 @@ func ShortestSuperstring(words []string) string {
 		return b
 	}
 
-	overLapFinderString := func(str1, str2 string) string {
-		str := str1 + str2
-		var i int
-		for i = 0; i < len(str1); i++ {
-			if str1[i:] == str2[0:Min(len(str1)-i, len(str2))] {
-				str = str1 + str2[len(str1)-i:]
-				break
-			}
-		}
-		return str
-	}
-
-	overLapFinder := func(str1, str2 string) int {
-		var res int = len(str2)
-		for i := 0; i < len(str1); i++ {
-			if str1[i:] == str2[0:Min(len(str1)-i, len(str2))] {
-				res = len(str1) - i
+	overLapFinder := func(src, dst string) int {
+		var res int = 1
+		for i := 0; i < len(src); i++ {
+			currentLen := len(src) - i
+			if dst[0:Min(currentLen, len(dst))] == src[i:] {
+				res = currentLen + 1
 				break
 			}
 		}
 		return res
 	}
 
-	g := [][]int{}
-	for i, w1 := range words {
-		row := make([]int, len(words))
-		for j, w2 := range words {
-			if i == j {
+	g := make([][]int, n)
+	rows := make([]int, n*n)
+	for i := range g {
+		g[i] = rows[i*n : (i+1)*n]
+	}
+
+	// Setup Graph
+	for i := 0; i < n; i++ {
+		for j := i; j < n; j++ {
+			g[i][j] = overLapFinder(words[i], words[j])
+			g[j][i] = overLapFinder(words[j], words[i])
+		}
+	}
+
+	fmt.Println(g)
+	// [[1, 2, 1, 2, 1], [2, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]]
+
+	R := 1 << n
+	C := n
+
+	dp := make([][]int, R)
+	rows = make([]int, R*C)
+	for i := range dp {
+		dp[i] = rows[i*C : (i+1)*C]
+	}
+
+	// BFS = [node, mask, paths, overlap]
+	q := []Node_SSS{}
+
+	for i := 0; i < n; i++ {
+		q = append(q, NewNode_SSS(i, 1<<i, []int{i}, 0))
+	}
+
+	// over all paths
+	finallLen := -1
+	finalPaths := []int{}
+
+	for len(q) > 0 {
+		curr := q[0]
+		q = q[1:]
+		// if overlap not good skip it
+		if dp[curr.mask][curr.node] > curr.overlap {
+			continue
+		}
+
+		if curr.mask == (1<<n)-1 && curr.overlap > finallLen {
+			fmt.Println(curr)
+			finallLen = curr.overlap
+			finalPaths = curr.paths
+			continue
+		}
+
+		for neigh := 0; neigh < n; neigh++ {
+			if ((1 << neigh) & curr.mask) > 0 {
+				// already visited
 				continue
 			}
-			row[j] = overLapFinder(w1, w2)
-		}
-		g = append(g, row)
-	}
+			nextMask := curr.mask | (1 << neigh)
+			nextoverlap := dp[curr.mask][curr.node] + g[curr.node][neigh]
 
-	paths := []string{}
-	visited := map[int]bool{}
-	var solve func(int)
-	solve = func(curr int) {
-
-		neigh := INVALID
-		cost := -INVALID
-		visited[curr] = true
-
-		for i, v := range g[curr] {
-			_, ok := visited[i]
-			if !ok && v != 0 && v > cost {
-				neigh = i
-				cost = v
+			if nextoverlap > dp[nextMask][neigh] {
+				dp[nextMask][neigh] = nextoverlap
+				newPath := make([]int, len(curr.paths))
+				copy(newPath, curr.paths)
+				newPath = append(newPath, neigh)
+				q = append(q, NewNode_SSS(neigh, nextMask, newPath, nextoverlap))
 			}
 		}
+	}
+	fmt.Println(finallLen)
+	fmt.Println(finalPaths)
 
-		if neigh == INVALID {
-			return
-		}
-
-		paths = append(paths, overLapFinderString(words[curr], words[neigh]))
-		solve(neigh)
+	ans := words[finalPaths[0]]
+	for i := 1; i < len(finalPaths); i++ {
+		prev, curr := finalPaths[i-1], finalPaths[i]
+		overLap := g[prev][curr] - 1
+		fmt.Println(overLap, words[curr])
+		ans += words[curr][overLap:]
 	}
 
-	solve(0)
-
-	fmt.Println(paths)
-	return ""
+	return ans
 }
 
 func Driver() {
-	words := []string{"catg", "ctaagt", "gcta", "ttca", "atgcatc"}
-	fmt.Println(ShortestSuperstring(words))
+	fmt.Println(ShortestSuperstring([]string{"ab", "a", "b"}))
 }
-
-// [catgcta gctaagt ctaagttca ttcatgcatc]
-// [catgctaagt ctaagtatgcatc atgcatcgcta gctattca]
-// ttcatgcatc
-// gctaagttcatgcatc
-// gctattcactaagtatgcatc
-// atgcatcgctaagtatgcatc
-
-// unc ShortestSuperstring(words []string) string {
-
-// 	Min := func(a int, b int) int {
-// 		if a < b {
-// 			return a
-// 		}
-// 		return b
-// 	}
-
-// 	overLapFinder := func(str1, str2 string) string {
-// 		str := str1 + str2
-// 		var i int
-// 		for i = 0; i < len(str1); i++ {
-// 			if str1[i:] == str2[0:Min(len(str1)-i, len(str2))] {
-// 				str = str1 + str2[len(str1)-i:]
-// 				break
-// 			}
-// 		}
-// 		return str
-// 	}
-
-// 	g := [][]string{}
-// 	for i, w1 := range words {
-// 		row := make([]string, len(words))
-// 		for j, w2 := range words {
-// 			if i == j {
-// 				continue
-// 			}
-// 			row[j] = overLapFinder(w1, w2)
-// 		}
-// 		g = append(g, row)
-// 	}
-
-// 	paths := []string{}
-// 	visited := map[int]bool{}
-// 	var solve func(int)
-// 	solve = func(curr int) {
-
-// 		neigh := INVALID
-// 		cost := INVALID
-// 		visited[curr] = true
-
-// 		for i, v := range g[curr] {
-// 			_, ok := visited[i]
-// 			if !ok && len(v) != 0 && len(v) < cost {
-// 				neigh = i
-// 				cost = len(v)
-// 			}
-// 		}
-
-// 		if neigh == INVALID {
-// 			return
-// 		}
-
-// 		paths = append(paths, g[curr][neigh])
-// 		solve(neigh)
-// 	}
-
-// 	solve(0)
-
-// 	fmt.Println(paths)
-// 	return ""
-// }
