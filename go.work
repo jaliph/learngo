@@ -21,4 +21,5 @@ use (
 	./leetcode/rwhelper
 	./leetcode/stacks
 	./leetcode/trie
+	./leetcode/twopointer
 )
