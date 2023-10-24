@@ -1,7 +1,5 @@
 package dp
 
-import "fmt"
-
 /**
  * @param costs: n x 3 cost matrix
  * @return: An integer, the minimum cost to paint all houses
@@ -34,6 +32,6 @@ func MinCost(costs [][]int) int {
 	return Min(prev[0], Min(prev[1], prev[2]))
 }
 
-func Driver() {
-	fmt.Println(MinCost([][]int{{1, 2, 3}, {1, 4, 6}}))
-}
+// func Driver() {
+// 	fmt.Println(MinCost([][]int{{1, 2, 3}, {1, 4, 6}}))
+// }

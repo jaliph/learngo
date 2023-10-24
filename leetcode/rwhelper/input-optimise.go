@@ -73,3 +73,13 @@ func ReadArrInt64(in *bufio.Reader) []int64 {
 	}
 	return arr
 }
+
+func ReadArrFloat64(in *bufio.Reader) []float64 {
+	numbs := ReadLineNumbs(in)
+	arr := make([]float64, len(numbs))
+	for i, n := range numbs {
+		val, _ := strconv.ParseFloat(n, 64)
+		arr[i] = val
+	}
+	return arr
+}

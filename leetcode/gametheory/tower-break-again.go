@@ -8,7 +8,7 @@ const SIZE_DIV = 20 // 1e5
 
 func populateDivisors() {
 	div = make([][]int, SIZE_DIV+1)
-	for i, _ := range div {
+	for i := range div {
 		div[i] = []int{}
 	}
 

@@ -106,14 +106,14 @@ func ShortestSuperstring(words []string) string {
 			}
 		}
 	}
-	fmt.Println(finallLen)
-	fmt.Println(finalPaths)
+	// fmt.Println(finallLen)
+	// fmt.Println(finalPaths)
 
 	ans := words[finalPaths[0]]
 	for i := 1; i < len(finalPaths); i++ {
 		prev, curr := finalPaths[i-1], finalPaths[i]
 		overLap := g[prev][curr] - 1
-		fmt.Println(overLap, words[curr])
+		// fmt.Println(overLap, words[curr])
 		ans += words[curr][overLap:]
 	}
 
