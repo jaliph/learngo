@@ -2,7 +2,7 @@
 
 package graph
 
-func shortestPathLength(graph [][]int) int {
+func ShortestPathLength(graph [][]int) int {
 
 	q := [][3]int{}
 
