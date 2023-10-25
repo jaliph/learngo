@@ -2,7 +2,6 @@ package graph
 
 import "fmt"
 
-// INVALID SOLUTION
 // https://leetcode.com/problems/find-the-shortest-superstring/solutions/195487/python-bfs-solution-with-detailed-explanation-with-extra-chinese-explanation/
 // TSP
 type Node_SSS struct {
