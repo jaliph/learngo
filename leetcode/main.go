@@ -1,7 +1,9 @@
 package main
 
-import dp "dp/atCoder"
+import (
+	"recursion"
+)
 
 func main() {
-	dp.Deque()
+	recursion.KthGrammar(2, 5)
 }
