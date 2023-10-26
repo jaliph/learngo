@@ -49,3 +49,18 @@ func ChessboardGameAgain(coins [][]int32) string {
 		return "Second"
 	}
 }
+
+/**
+first positive integer
+Grundy(x) = Mex(Grundy(y1), Grundy(y2), Grundy(y3))
+
+                  0             3         4
+
+									1
+
+
+0 1 3 5
+
+2
+
+**/

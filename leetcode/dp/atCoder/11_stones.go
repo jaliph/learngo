@@ -47,6 +47,8 @@ func StoneGame() {
 		}
 	}
 
+	fmt.Println(dp)
+
 	if dp[pile] == 1 {
 		fmt.Println("First")
 	} else {

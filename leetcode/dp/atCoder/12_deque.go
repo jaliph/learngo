@@ -10,8 +10,69 @@ import (
 	"strings"
 )
 
-// TLE
 func Deque() {
+	Max := func(a int, b int) int {
+		if a > b {
+			return a
+		}
+		return b
+	}
+
+	ReadLineNumbs := func(in *bufio.Reader) []string {
+		line, _ := in.ReadString('\n')
+		line = strings.ReplaceAll(line, "\r", "")
+		line = strings.ReplaceAll(line, "\n", "")
+		numbs := strings.Split(line, " ")
+		return numbs
+	}
+
+	ReadArrInt := func(in *bufio.Reader) []int {
+		numbs := ReadLineNumbs(in)
+		arr := make([]int, len(numbs))
+		for i, n := range numbs {
+			val, _ := strconv.Atoi(n)
+			arr[i] = val
+		}
+		return arr
+	}
+
+	ReadInt := func(in *bufio.Reader) int {
+		line, _ := in.ReadString('\n')
+		line = strings.ReplaceAll(line, "\r", "")
+		line = strings.ReplaceAll(line, "\n", "")
+		val, _ := strconv.Atoi(line)
+		return val
+	}
+
+	in := bufio.NewReader(os.Stdin)
+
+	cnt := ReadInt(in)
+	vals := ReadArrInt(in)
+
+	dp := make([][]int, cnt)
+	rows := make([]int, cnt*cnt)
+	for i := range rows {
+		rows[i] = -1
+	}
+
+	for i := range dp {
+		dp[i] = rows[i*cnt : (i+1)*cnt]
+	}
+
+	for i := range vals {
+		dp[i][i] = vals[i]
+	}
+
+	for i := cnt - 2; i >= 0; i-- {
+		for j := i + 1; j < cnt; j++ {
+			dp[i][j] = Max(vals[i]-dp[i+1][j], vals[j]-dp[i][j-1])
+		}
+	}
+
+	fmt.Println(dp[0][cnt-1])
+}
+
+func Deque_1() {
 	Max := func(a int, b int) int {
 		if a > b {
 			return a
@@ -81,16 +142,11 @@ func Deque() {
 		return res
 	}
 
-	sum := 0
-	for _, v := range vals {
-		sum += v
-	}
-
 	fmt.Println(solve(0, cnt-1))
 }
 
 // TLE
-func Deque_1() {
+func Deque_2() {
 	Max := func(a int, b int) int {
 		if a > b {
 			return a
