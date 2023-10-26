@@ -61,7 +61,7 @@ func Slime(mats []int) int {
 	return res
 }
 
-func Driver() {
-	mats := []int{10, 20, 30, 40}
-	fmt.Println(Slime(mats))
-}
+// func Driver() {
+// 	mats := []int{10, 20, 30, 40}
+// 	fmt.Println(Slime(mats))
+// }
