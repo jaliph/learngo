@@ -1,7 +1,7 @@
 package main
 
 import (
-	dp "dp/mcm"
+	dp "dp/dp-strings"
 )
 
 func main() {
