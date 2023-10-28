@@ -2,8 +2,7 @@
 
 package dp
 
-func minScoreTriangulation(values []int) int {
-
+func MinScoreTriangulation(values []int) int {
 	Min := func(a int, b int) int {
 		if a < b {
 			return a
@@ -25,6 +24,8 @@ func minScoreTriangulation(values []int) int {
 			dp[i][j] = INF
 			for k := i + 1; k < j; k++ {
 				dp[i][j] = Min(dp[i][j], dp[i][k]+(values[i]*values[k]*values[j])+dp[k][j])
+				// make two points, check for all the third point.
+				// dp[i][k] & dp[k][j] represent the polgons on the left and right
 			}
 		}
 	}

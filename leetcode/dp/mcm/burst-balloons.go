@@ -1,6 +1,6 @@
 package dp
 
-import "fmt"
+// https://leetcode.com/problems/burst-balloons/
 
 func maxCoins(nums []int) int {
 	n := len(nums)
@@ -36,7 +36,7 @@ func maxCoins(nums []int) int {
 	return dp[1][n]
 }
 
-func Driver() {
-	mats := []int{3, 1, 5, 8}
-	fmt.Println(maxCoins(mats))
-}
+// func Driver() {
+// 	mats := []int{3, 1, 5, 8}
+// 	fmt.Println(maxCoins(mats))
+// }

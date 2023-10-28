@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/132-pattern
 package stacks
 
 func Find132pattern(nums []int) bool {
