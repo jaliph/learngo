@@ -1,5 +1,5 @@
 package dp
 
-func Slimes() {
+func Candies() {
 
 }

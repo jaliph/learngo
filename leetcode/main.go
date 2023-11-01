@@ -1,7 +1,7 @@
 package main
 
-import dp "dp/dp-strings"
+import graph "graph/bfs"
 
 func main() {
-	dp.Driver()
+	graph.Driver()
 }

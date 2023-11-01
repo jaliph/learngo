@@ -1,9 +1,5 @@
 package dp
 
-import (
-	"fmt"
-)
-
 type Manacher struct {
 	p         []int  // manacher array
 	s         string // original string
@@ -60,16 +56,16 @@ func (m *Manacher) RunManacher() {
 	}
 }
 
-func Driver() {
-	s := "abbd"
+// func Driver() {
+// 	s := "abbd"
 
-	m := NewManacher(s)
-	m.RunManacher()
-	fmt.Println(m)
+// 	m := NewManacher(s)
+// 	m.RunManacher()
+// 	fmt.Println(m)
 
-	l, r := m.lpsStart, m.lpsStart+m.lpsLength-1
-	fmt.Println(s[l : r+1])
-}
+// 	l, r := m.lpsStart, m.lpsStart+m.lpsLength-1
+// 	fmt.Println(s[l : r+1])
+// }
 
 // 0, 0, 1, 0, 1, 2, 1, 0, 1, 0, 1, 2, 1, 0, 7, 0, 1, 2, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0
 // 0, 1, 2, 1, 2, 3, 2, 1, 2, 1, 2, 3, 2, 1, 8, 1, 2, 3, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 0

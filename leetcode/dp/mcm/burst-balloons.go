@@ -2,7 +2,7 @@ package dp
 
 // https://leetcode.com/problems/burst-balloons/
 
-func maxCoins(nums []int) int {
+func MaxCoins(nums []int) int {
 	n := len(nums)
 	nums = append([]int{1}, nums...)
 	nums = append(nums, 1)

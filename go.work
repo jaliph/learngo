@@ -20,6 +20,7 @@ use (
 	./leetcode/recursion
 	./leetcode/rwhelper
 	./leetcode/stacks
+	./leetcode/trees
 	./leetcode/trie
 	./leetcode/twopointer
 )
