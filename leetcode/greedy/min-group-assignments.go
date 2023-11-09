@@ -1,7 +1,6 @@
 package greedy
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -61,6 +60,6 @@ func minGroupsForValidAssignment(nums []int) int {
 	return res
 }
 
-func Driver() {
-	fmt.Println(minGroupsForValidAssignment([]int{10, 10, 10, 3, 1, 1}))
-}
+// func Driver() {
+// 	fmt.Println(minGroupsForValidAssignment([]int{10, 10, 10, 3, 1, 1}))
+// }

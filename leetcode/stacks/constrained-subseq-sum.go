@@ -1,9 +1,7 @@
 // https://leetcode.com/problems/constrained-subsequence-sum/
 package stacks
 
-import "fmt"
-
-func constrainedSubsetSum(nums []int, k int) int {
+func ConstrainedSubsetSum(nums []int, k int) int {
 	deque := [][2]int{}
 
 	Max := func(a int, b int) int {
@@ -41,6 +39,6 @@ func constrainedSubsetSum(nums []int, k int) int {
 	return res
 }
 
-func Driver() {
-	fmt.Println(constrainedSubsetSum([]int{10, 2, -10, 5, 20}, 2))
-}
+// func Driver() {
+// 	fmt.Println(constrainedSubsetSum([]int{10, 2, -10, 5, 20}, 2))
+// }

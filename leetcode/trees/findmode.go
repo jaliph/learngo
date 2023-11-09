@@ -1,5 +1,7 @@
 package trees
 
+// https://leetcode.com/problems/find-mode-in-binary-search-tree/
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
