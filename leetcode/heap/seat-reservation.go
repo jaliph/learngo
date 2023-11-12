@@ -75,12 +75,12 @@ func (this *SeatManager) Unreserve(seatNumber int) {
 }
 **/
 
-func Driver() {
-	s := Constructor(5)
+// func Driver() {
+// 	s := Constructor(5)
 
-	fmt.Println(s.seats)
-	fmt.Println(s.Reserve())
-	fmt.Println(s.seats)
-	s.Unreserve(5)
-	fmt.Println(s.seats)
-}
+// 	fmt.Println(s.seats)
+// 	fmt.Println(s.Reserve())
+// 	fmt.Println(s.seats)
+// 	s.Unreserve(5)
+// 	fmt.Println(s.seats)
+// }

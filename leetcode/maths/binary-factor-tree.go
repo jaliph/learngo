@@ -1,7 +1,6 @@
 package maths
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -45,7 +44,7 @@ func numFactoredBinaryTrees(arr []int) int {
 	return sum
 }
 
-func Driver() {
-	arr := []int{2, 4, 5, 10}
-	fmt.Println(numFactoredBinaryTrees(arr))
-}
+// func Driver() {
+// 	arr := []int{2, 4, 5, 10}
+// 	fmt.Println(numFactoredBinaryTrees(arr))
+// }

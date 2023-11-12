@@ -2,8 +2,6 @@ package graph
 
 // https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/
 
-import "fmt"
-
 type N_Cell struct {
 	x    int
 	y    int
@@ -57,8 +55,8 @@ func nearestExit(maze [][]byte, entrance []int) int {
 	return -1
 }
 
-func Driver() {
-	maze := [][]byte{{'+', '+', '+'}, {'.', '.', '.'}, {'+', '+', '+'}}
-	entrance := []int{1, 0}
-	fmt.Println(nearestExit(maze, entrance))
-}
+// func Driver() {
+// 	maze := [][]byte{{'+', '+', '+'}, {'.', '.', '.'}, {'+', '+', '+'}}
+// 	entrance := []int{1, 0}
+// 	fmt.Println(nearestExit(maze, entrance))
+// }

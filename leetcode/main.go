@@ -1,7 +1,9 @@
 package main
 
-import "heap"
+import (
+	graph "graph/bfs"
+)
 
 func main() {
-	heap.Driver()
+	graph.Driver()
 }
