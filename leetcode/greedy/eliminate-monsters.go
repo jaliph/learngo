@@ -1,7 +1,6 @@
 package greedy
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -34,8 +33,8 @@ func eliminateMaximum(dist []int, speed []int) int {
 	return res
 }
 
-func Driver() {
-	dist := []int{1, 3, 4}
-	speed := []int{1, 1, 1}
-	fmt.Println(eliminateMaximum(dist, speed))
-}
+// func Driver() {
+// 	dist := []int{1, 3, 4}
+// 	speed := []int{1, 1, 1}
+// 	fmt.Println(eliminateMaximum(dist, speed))
+// }

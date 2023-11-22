@@ -1,9 +1,9 @@
 package main
 
 import (
-	graph "graph/bfs"
+	"twopointer"
 )
 
 func main() {
-	graph.Driver()
+	twopointer.Driver()
 }

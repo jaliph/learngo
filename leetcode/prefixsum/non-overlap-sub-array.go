@@ -4,7 +4,7 @@ package prefixsum
 
 import "fmt"
 
-func minSumOfLengths(arr []int, target int) int {
+func MinSumOfLengths(arr []int, target int) int {
 
 	prefixMap := map[int]int{}
 	var length int = 1e9
@@ -41,9 +41,9 @@ func minSumOfLengths(arr []int, target int) int {
 	return ans
 }
 
-func Driver() {
-	arr := []int{3, 2, 2, 4, 3}
-	target := 3
-	fmt.Println(minSumOfLengths(arr, target))
+// func Driver() {
+// 	arr := []int{3, 2, 2, 4, 3}
+// 	target := 3
+// 	fmt.Println(minSumOfLengths(arr, target))
 
-}
+// }

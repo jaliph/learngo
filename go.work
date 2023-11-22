@@ -19,6 +19,7 @@ use (
 	./leetcode/query
 	./leetcode/recursion
 	./leetcode/rwhelper
+	./leetcode/slidingwindow
 	./leetcode/stacks
 	./leetcode/trees
 	./leetcode/trie
