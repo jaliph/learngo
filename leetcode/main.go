@@ -1,9 +1,7 @@
 package main
 
-import (
-	"twopointer"
-)
+import dp "dp/1D"
 
 func main() {
-	twopointer.Driver()
+	dp.Driver()
 }

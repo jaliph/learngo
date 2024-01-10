@@ -1,6 +1,8 @@
 package twopointer
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // https://leetcode.com/problems/count-nice-pairs-in-an-array/solutions/4311440/python3-two-sum-approach-number-of-pairs-n-n-1-2-beats-99/?envType=daily-question&envId=2023-11-21
 
@@ -31,4 +33,10 @@ func countNicePairs(nums []int) int {
 
 func Driver() {
 	fmt.Println(countNicePairs([]int{13, 10, 35, 24, 76}))
+}
+
+func maxWidthOfVerticalArea(points [][]int) int {
+
+	fmt.Println(points)
+	return 0
 }
