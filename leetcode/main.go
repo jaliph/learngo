@@ -1,7 +1,11 @@
 package main
 
-import dp "dp/1D"
+import (
+	"basic"
+	"fmt"
+)
 
 func main() {
-	dp.Driver()
+	arr := []int{1, 1, 1, 4}
+	fmt.Println(arr, basic.FindDuplicate(arr))
 }
