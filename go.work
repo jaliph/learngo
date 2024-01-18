@@ -3,7 +3,7 @@ go 1.21.3
 use ./leetcode
 
 use (
-	./leetcode/basics
+	./leetcode/basic
 	./leetcode/binarysearch
 	./leetcode/channels
 	./leetcode/cyclic

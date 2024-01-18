@@ -1,11 +1,9 @@
 package main
 
 import (
-	"basic"
-	"fmt"
+	basic "basic/sorts"
 )
 
 func main() {
-	arr := []int{1, 1, 1, 4}
-	fmt.Println(arr, basic.FindDuplicate(arr))
+	basic.Driver()
 }
