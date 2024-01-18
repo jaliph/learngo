@@ -16,14 +16,30 @@ func countingSort(arr []int) []int {
 	}
 
 	max := MaxV(arr...)
-	// countArray :=
 
-	// for _, v := range arr {
-	// 	freqMap[v]++
-	// }
+	countArr := make([]int, max+1)
+	output := make([]int, len(arr))
 
-	fmt.Println(max)
-	return []int{}
+	// increase freq
+	for _, v := range arr {
+		countArr[v]++
+	}
+
+	fmt.Println(countArr)
+
+	// prefix sum counting array
+	for i := 1; i < len(countArr); i++ {
+		countArr[i] += countArr[i-1]
+	}
+	fmt.Println(countArr)
+
+	// set the numbers in the original array from the counted Freq
+	for i := len(arr) - 1; i >= 0; i-- {
+		output[countArr[arr[i]]-1] = arr[i]
+		countArr[arr[i]]--
+	}
+	fmt.Println(output)
+	return output
 }
 
 func Driver() {
