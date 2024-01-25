@@ -2,10 +2,6 @@
 
 package recursion
 
-import (
-	"fmt"
-)
-
 func solveSudoku(board [][]byte) {
 
 	canFillValue := func(i, j int, ans byte) bool {
@@ -67,30 +63,30 @@ func solveSudoku(board [][]byte) {
 	solve(0, 0)
 }
 
-func Driver() {
-	board := [][]byte{
-		{'.', '.', '.', '1', '5', '.', '.', '.', '6'},
-		{'.', '.', '.', '.', '.', '8', '.', '3', '.'},
-		{'5', '.', '.', '.', '.', '.', '4', '.', '.'},
-		{'.', '1', '.', '.', '.', '.', '.', '.', '4'},
-		{'.', '.', '.', '.', '.', '7', '.', '.', '.'},
-		{'.', '.', '6', '4', '.', '.', '.', '7', '.'},
-		{'.', '.', '.', '.', '8', '.', '.', '2', '.'},
-		{'4', '9', '.', '.', '1', '.', '.', '.', '3'},
-		{'.', '.', '7', '2', '6', '.', '.', '.', '1'}}
-	Print2D := func(grid [][]byte) {
-		for r := range grid {
-			for _, colValue := range grid[r] {
-				val := string(colValue)
-				fmt.Print(val, " ")
-			}
-			fmt.Println()
-		}
-		fmt.Println("----")
-	}
+// func Driver() {
+// 	board := [][]byte{
+// 		{'.', '.', '.', '1', '5', '.', '.', '.', '6'},
+// 		{'.', '.', '.', '.', '.', '8', '.', '3', '.'},
+// 		{'5', '.', '.', '.', '.', '.', '4', '.', '.'},
+// 		{'.', '1', '.', '.', '.', '.', '.', '.', '4'},
+// 		{'.', '.', '.', '.', '.', '7', '.', '.', '.'},
+// 		{'.', '.', '6', '4', '.', '.', '.', '7', '.'},
+// 		{'.', '.', '.', '.', '8', '.', '.', '2', '.'},
+// 		{'4', '9', '.', '.', '1', '.', '.', '.', '3'},
+// 		{'.', '.', '7', '2', '6', '.', '.', '.', '1'}}
+// 	Print2D := func(grid [][]byte) {
+// 		for r := range grid {
+// 			for _, colValue := range grid[r] {
+// 				val := string(colValue)
+// 				fmt.Print(val, " ")
+// 			}
+// 			fmt.Println()
+// 		}
+// 		fmt.Println("----")
+// 	}
 
-	Print2D(board)
+// 	Print2D(board)
 
-	solveSudoku(board)
-	Print2D(board)
-}
+// 	solveSudoku(board)
+// 	Print2D(board)
+// }

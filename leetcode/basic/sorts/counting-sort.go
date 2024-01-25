@@ -42,6 +42,6 @@ func countingSort(arr []int) []int {
 	return output
 }
 
-func Driver() {
-	countingSort([]int{4, 3, 12, 1, 5, 5, 3, 9})
-}
+// func Driver() {
+// 	countingSort([]int{4, 3, 12, 1, 5, 5, 3, 9})
+// }

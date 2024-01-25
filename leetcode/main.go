@@ -1,9 +1,7 @@
 package main
 
-import (
-	basic "basic/sorts"
-)
+import "recursion"
 
 func main() {
-	basic.Driver()
+	recursion.Driver()
 }
