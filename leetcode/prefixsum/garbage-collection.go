@@ -1,9 +1,5 @@
 package prefixsum
 
-import (
-	"fmt"
-)
-
 // https://leetcode.com/problems/minimum-amount-of-time-to-collect-garbage/
 
 func garbageCollection(garbage []string, travel []int) int {
@@ -41,8 +37,8 @@ func garbageCollection(garbage []string, travel []int) int {
 	return total
 }
 
-func Driver() {
-	garbage := []string{"MMM", "PGM", "GP"}
-	travel := []int{3, 10}
-	fmt.Println(garbageCollection(garbage, travel))
-}
+// func Driver() {
+// 	garbage := []string{"MMM", "PGM", "GP"}
+// 	travel := []int{3, 10}
+// 	fmt.Println(garbageCollection(garbage, travel))
+// }
