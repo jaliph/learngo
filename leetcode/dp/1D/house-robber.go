@@ -15,7 +15,7 @@ func rob(nums []int) int {
 	prev1 := 0 // dp[i - 1]
 	prev2 := 0 // dp[i - 2]
 	for i := 0; i < len(nums); i++ {
-			 := Max(prev1, prev2+nums[i])
+		curr := Max(prev1, prev2+nums[i])
 		prev2 = prev1
 		prev1 = curr
 	}

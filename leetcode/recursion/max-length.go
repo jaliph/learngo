@@ -5,8 +5,8 @@ import "fmt"
 // https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters
 
 func maxLength(arr []string) int {
-	m := map[rune]int{}
-
+	const all1s int = 1<<27 - 1
+	charArray := make([]int, len(arr))
 	Max := func(a int, b int) int {
 		if a > b {
 			return a
@@ -14,53 +14,46 @@ func maxLength(arr []string) int {
 		return b
 	}
 
-	add := func(str string, freqMap map[rune]int) {
-		for _, v := range str {
-			freqMap[v]++
-		}
-	}
-
-	remove := func(str string, freqMap map[rune]int) {
-		for _, v := range str {
-			freqMap[v]--
-			if freqMap[v] == 0 {
-				delete(freqMap, v)
+	for i, v := range arr {
+		for _, ch := range v {
+			if charArray[i]&(1<<(ch-'a')) > 0 {
+				charArray[i] = all1s
 			}
+			charArray[i] = charArray[i] | 1<<(ch-'a')
 		}
 	}
 
-	isOverlap := func(str string, freqMap map[rune]int) bool {
-		if len(freqMap) == 0 {
-			return false
+	get1Counts := func(i int) int {
+		count := 0
+		for i > 0 {
+			i = i & (i - 1)
+			count++
 		}
-		for _, v := range str {
-			if _, ok := freqMap[v]; ok {
-				return true
-			}
-		}
-		return false
+		return count
 	}
 
-	var solve func(int) int
-	solve = func(idx int) int {
-		if idx >= len(arr) {
-			return len(m)
+	var recur func(int, int) int
+	recur = func(idx int, bit int) int {
+		if idx >= len(charArray) {
+			return get1Counts(bit)
+		}
+
+		if charArray[idx] == all1s {
+			return recur(idx+1, bit)
 		}
 
 		res := 0
-		if !isOverlap(arr[idx], m) {
-			add(arr[idx], m)
-			res = solve(idx + 1)
-			remove(arr[idx], m)
+		if bit&charArray[idx] == 0 {
+
+			res = recur(idx+1, bit|charArray[idx])
 		}
-		res = Max(res, solve(idx+1))
-		return res
+		return Max(res, recur(idx+1, bit))
 	}
 
-	return solve(0)
+	return recur(0, 0)
 }
 
 func Driver() {
-	fmt.Println(maxLength([]string{"aa", "bb"}))
-	fmt.Println(maxLength([]string{"un", "iq", "ue"}))
+	// fmt.Println(maxLength([]string{"aa", "bb"}))
+	fmt.Println(maxLength([]string{"a", "b", "c"}))
 }
