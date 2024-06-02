@@ -124,3 +124,5 @@ func sumSubarrayMins2(arr []int) int {
 // 	arr := []int{3, 1, 2, 4}
 // 	fmt.Println(sumSubarrayMins(arr))
 // }
+
+// https://leetcode.com/problems/sum-of-subarray-minimums/solutions/2846397/monostack/
