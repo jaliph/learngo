@@ -67,3 +67,5 @@ func NextGreaterElementBrute(nums1 []int, nums2 []int) []int {
 	return res
 
 }
+
+// fmt.Println(basic.NextGreaterElement([]int{4, 1, 3}, []int{1, 3, 4, 2}))
