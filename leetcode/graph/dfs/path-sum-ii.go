@@ -7,7 +7,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func pathSum(root *TreeNode, targetSum int) [][]int {
+func PathSum(root *TreeNode, targetSum int) [][]int {
 	res := [][]int{}
 
 	var dfs func(*TreeNode, int, []int)
@@ -32,4 +32,5 @@ func pathSum(root *TreeNode, targetSum int) [][]int {
 	}
 
 	dfs(root, targetSum, []int{})
+	return res
 }
