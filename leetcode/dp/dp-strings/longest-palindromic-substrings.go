@@ -79,3 +79,37 @@ func findPalindrome_TD(l, r int, s string) int {
 // func Driver() {
 // 	fmt.Println(LongestPalindrome("cbbd"))
 // }
+
+func LongestPalindrome2(s string) string {
+	if len(s) == 0 {
+		return ""
+	}
+
+	start, end := 0, 0
+
+	for i := 0; i < len(s); i++ {
+		lenOdd := getMaxLength(s, i, i)    // Для нечетных палиндромов
+		lenEven := getMaxLength(s, i, i+1) // Для четных палиндромов
+		maxLen := max(lenOdd, lenEven)
+		if maxLen > end-start {
+			start = i - (maxLen-1)/2
+			end = i + maxLen/2
+		}
+	}
+	return s[start : end+1]
+}
+
+func getMaxLength(s string, left, right int) int {
+	for left >= 0 && right < len(s) && s[left] == s[right] {
+		left--
+		right++
+	}
+	return right - left - 1
+}
+
+func max(x, y int) int {
+	if x > y {
+		return x
+	}
+	return y
+}

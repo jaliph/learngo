@@ -1,7 +1,7 @@
 package main
 
 import (
-	basic "basic/bits"
+	"dp/dp-strings"
 	"fmt"
 )
 
@@ -12,7 +12,7 @@ func main() {
 	// )
 	// _, ch := democracy.NewDemocracy(nc)
 	// <-ch
-	fmt.Println(basic.GenerateCombination("qwerty"))
+	fmt.Println(dp.IsInterleave_TD("aabcc", "dbbca", "aadbbcbcac"))
 
 }
 
