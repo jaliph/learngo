@@ -1,8 +1,8 @@
 package main
 
 import (
-	"dp/dp-strings"
 	"fmt"
+	"greedy"
 )
 
 func main() {
@@ -12,7 +12,7 @@ func main() {
 	// )
 	// _, ch := democracy.NewDemocracy(nc)
 	// <-ch
-	fmt.Println(dp.IsInterleave_TD("aabcc", "dbbca", "aadbbcbcac"))
+	fmt.Println(greedy.MinIncrementForUnique([]int{3, 2, 1, 2, 1, 7}))
 
 }
 
