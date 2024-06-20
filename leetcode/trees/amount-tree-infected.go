@@ -4,7 +4,7 @@
 
 package trees
 
-func amountOfTime(root *TreeNode, start int) int {
+func AmountOfTime(root *TreeNode, start int) int {
 	ans := 0
 	trav(root, start, &ans)
 	return ans
