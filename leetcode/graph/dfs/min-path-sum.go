@@ -2,7 +2,7 @@ package graph
 
 // https://leetcode.com/problems/minimum-falling-path-sum/
 
-func minFallingPathSum(matrix [][]int) int {
+func MinFallingPathSum(matrix [][]int) int {
 
 	var INF int = 1e9
 	R := len(matrix)

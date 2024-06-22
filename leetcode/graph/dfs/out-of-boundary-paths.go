@@ -1,6 +1,7 @@
 package graph
 
-func findPaths(m int, n int, maxMove int, startRow int, startColumn int) int {
+// https://leetcode.com/problems/out-of-boundary-paths/description/
+func FindPaths(m int, n int, maxMove int, startRow int, startColumn int) int {
 
 	const MOD int = 1e9 + 7
 	R := m

@@ -10,7 +10,7 @@ package trees
  * }
  */
 
-func leafSimilar(root1 *TreeNode, root2 *TreeNode) bool {
+func LeafSimilar(root1 *TreeNode, root2 *TreeNode) bool {
 	l1 := getLeafSequence(root1)
 	l2 := getLeafSequence(root1)
 

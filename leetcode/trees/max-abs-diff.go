@@ -10,7 +10,7 @@ package trees
  *     Right *TreeNode
  * }
  */
-func maxAncestorDiff(root *TreeNode) int {
+func MaxAncestorDiff(root *TreeNode) int {
 	const MAX int = -1e9
 	const MIN int = 1e9
 	var ans int = MAX
