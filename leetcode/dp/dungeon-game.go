@@ -5,6 +5,8 @@ import (
 	"math"
 )
 
+// https://leetcode.com/problems/dungeon-game/description/
+
 // Binary Search
 func CalculateMinimumHP(dungeon [][]int) int {
 	R, C := len(dungeon), len(dungeon[0])
@@ -84,7 +86,7 @@ func CalculateMinimumHP_DP(dungeon [][]int) int {
 
 	for i := r - 1; i >= 0; i-- {
 		for j := c - 1; j >= 0; j-- {
-			need := Min(grid[i+1][j], grid[i][j+1]) - dungeon[i][j]
+			need := -dungeon[i][j] + Min(grid[i+1][j], grid[i][j+1])
 			if need <= 0 {
 				grid[i][j] = 1
 			} else {
@@ -93,4 +95,44 @@ func CalculateMinimumHP_DP(dungeon [][]int) int {
 		}
 	}
 	return grid[0][0]
+}
+
+func calculateMinimumHP_TD(dungeon [][]int) int {
+
+	Min := func(a int, b int) int {
+		if a < b {
+			return a
+		}
+		return b
+	}
+	R := len(dungeon)
+	C := len(dungeon[0])
+
+	var solve func(i, j int) int
+	solve = func(i, j int) int {
+		if i >= R || j >= C {
+			return 1e9
+		}
+
+		if i == R-1 && j == C-1 {
+			if dungeon[i][j] <= 0 {
+				// if the cell is ngative, then to stay alive i need to -value + 1 to stay alive
+				return -dungeon[i][j] + 1
+			}
+			//  else i need just 1 health to stay alive
+			return 1
+		}
+
+		right := solve(i+1, j)
+		down := solve(i, j+1)
+
+		minRequired := -dungeon[i][j] + Min(right, down)
+		if minRequired <= 0 {
+			return 1
+		}
+		return minRequired
+
+	}
+
+	return solve(0, 0)
 }

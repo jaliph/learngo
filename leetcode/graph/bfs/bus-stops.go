@@ -7,6 +7,7 @@ type BusNode struct {
 	cost int
 }
 
+// https://leetcode.com/problems/bus-routes/description/
 func NewBusNode(bus string, cost int) BusNode {
 	return BusNode{bus, cost}
 }
