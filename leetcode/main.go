@@ -1,50 +1,35 @@
 package main
 
-import (
-	"fmt"
-)
+import "linkedlist"
 
 func main() {
-	// m := map[int]bool{}
-	// fmt.Println(m[2])
-
-}
-
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
-type Node struct {
-	val int
-	x   int
-	y   int
-}
-
-func verticalTraversal(root *TreeNode) [][]int {
-
-	// const INF int = 1001
-	// min := INF
-	// max := -INF
-
-	m := map[Node]bool{}
-
-	var dfs func(*TreeNode, int, int)
-	dfs = func(node *TreeNode, i, j int) {
-		if root == nil {
-			return
-		}
-
-		m[Node{node.Val, i, j}] = true
-		dfs(node.Left, i+1, j-1)
-		dfs(node.Right, i+1, j+1)
+	head := linkedlist.ListNode{
+		Val: 0,
+		Next: &linkedlist.ListNode{
+			Val: 3,
+			Next: &linkedlist.ListNode{
+				Val: 1,
+				Next: &linkedlist.ListNode{
+					Val: 0,
+					Next: &linkedlist.ListNode{
+						Val: 4,
+						Next: &linkedlist.ListNode{
+							Val: 5,
+							Next: &linkedlist.ListNode{
+								Val: 2,
+								Next: &linkedlist.ListNode{
+									Val:  0,
+									Next: nil,
+								},
+							},
+						},
+					},
+				},
+			},
+		},
 	}
 
-	dfs(root, 0, 0)
-
-	fmt.Println(m)
-	return [][]int{}
+	linkedlist.MergeNodes(&head)
 }
 
 // do it the other way
