@@ -3,7 +3,6 @@
 package twopointer
 
 func trap(height []int) int {
-
 	Max := func(a int, b int) int {
 		if a > b {
 			return a
