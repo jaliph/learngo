@@ -1,35 +1,11 @@
 package main
 
-import "linkedlist"
+import (
+	"concurrency"
+)
 
 func main() {
-	head := linkedlist.ListNode{
-		Val: 0,
-		Next: &linkedlist.ListNode{
-			Val: 3,
-			Next: &linkedlist.ListNode{
-				Val: 1,
-				Next: &linkedlist.ListNode{
-					Val: 0,
-					Next: &linkedlist.ListNode{
-						Val: 4,
-						Next: &linkedlist.ListNode{
-							Val: 5,
-							Next: &linkedlist.ListNode{
-								Val: 2,
-								Next: &linkedlist.ListNode{
-									Val:  0,
-									Next: nil,
-								},
-							},
-						},
-					},
-				},
-			},
-		},
-	}
-
-	linkedlist.MergeNodes(&head)
+	concurrency.Worker()
 }
 
 // do it the other way

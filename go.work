@@ -5,7 +5,7 @@ use ./leetcode
 use (
 	./leetcode/basic
 	./leetcode/binarysearch
-	./leetcode/channels
+	./leetcode/concurrency
 	./leetcode/cyclic
 	./leetcode/democracy
 	./leetcode/dp

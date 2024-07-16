@@ -1,4 +1,4 @@
-package channels
+package concurrency
 
 type Queue struct {
 	items chan interface{}
