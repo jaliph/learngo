@@ -20,6 +20,7 @@ use (
 	./leetcode/query
 	./leetcode/recursion
 	./leetcode/rwhelper
+	./leetcode/scheduler
 	./leetcode/slidingwindow
 	./leetcode/stacks
 	./leetcode/trees
