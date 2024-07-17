@@ -12,7 +12,7 @@ package trees
  */
 func MaxAncestorDiff(root *TreeNode) int {
 	const MAX int = -1e9
-	const MIN int = 1e9
+	// const MIN int = 1e9
 	var ans int = MAX
 
 	Min := func(a int, b int) int {

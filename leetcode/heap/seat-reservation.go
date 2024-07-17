@@ -8,7 +8,7 @@ type SeatManager struct {
 	seats []int
 }
 
-func Constructor(n int) SeatManager {
+func Constructor2(n int) SeatManager {
 	sm := SeatManager{make([]int, n)}
 
 	for i := 1; i <= n; i++ {

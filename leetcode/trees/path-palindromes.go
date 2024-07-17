@@ -10,7 +10,7 @@ package trees
  *     Right *TreeNode
  * }
  */
-func pseudoPalindromicPaths(root *TreeNode) int {
+func PseudoPalindromicPaths(root *TreeNode) int {
 
 	var dfs func(*TreeNode, int) int
 	dfs = func(node *TreeNode, pathBits int) int {
