@@ -70,8 +70,8 @@ func (s *Trie2D) StartsWith(str string) bool {
 func Driver_Trie2D() {
 	s := NewTrieNode()
 	s.AddWord("abc")
-	s.AddWord("adf")
-	s.AddWord("bad")
+	// s.AddWord("adf")
+	// s.AddWord("bad")
 	Print2D(s.nodes)
 	str := "adf"
 	fmt.Println("str is present ?", s.Search(str))
