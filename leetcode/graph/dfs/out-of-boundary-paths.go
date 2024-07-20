@@ -119,7 +119,6 @@ func findPathsDP_Opt(m int, n int, maxMove int, startRow int, startColumn int) i
 	for leftmoves := 1; leftmoves <= maxMove; leftmoves++ {
 
 		for r := 0; r < m; r++ {
-
 			for c := 0; c < n; c++ {
 				ans := 0
 				for _, v := range dirs {

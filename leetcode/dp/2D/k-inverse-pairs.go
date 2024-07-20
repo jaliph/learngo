@@ -2,7 +2,7 @@ package dp
 
 // https://leetcode.com/problems/k-inverse-pairs-array/
 
-func kInversePairs(n int, k int) int {
+func KInversePairs(n int, k int) int {
 	MOD := 1000000007
 	dp := make([]int, k+1)
 	dp[0] = 1
@@ -17,7 +17,7 @@ func kInversePairs(n int, k int) int {
 	return dp[k]
 }
 
-func kInversePairsTLE(n int, k int) int {
+func KInversePairsTLE(n int, k int) int {
 	const MOD int = 1e9 + 2
 	dp := map[[2]int]int{}
 	var recur func(int, int) int

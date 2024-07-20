@@ -88,8 +88,8 @@ func LongestPalindrome2(s string) string {
 	start, end := 0, 0
 
 	for i := 0; i < len(s); i++ {
-		lenOdd := getMaxLength(s, i, i)    // Для нечетных палиндромов
-		lenEven := getMaxLength(s, i, i+1) // Для четных палиндромов
+		lenOdd := getMaxLength(s, i, i)
+		lenEven := getMaxLength(s, i, i+1)
 		maxLen := max(lenOdd, lenEven)
 		if maxLen > end-start {
 			start = i - (maxLen-1)/2

@@ -2,7 +2,7 @@ package dp
 
 // https://leetcode.com/problems/knight-probability-in-chessboard/
 
-func knightProbabilityBrute(n int, k int, row int, column int) float64 {
+func KnightProbabilityBrute(n int, k int, row int, column int) float64 {
 
 	dp := map[[3]int]float64{}
 
@@ -36,7 +36,7 @@ func knightProbabilityBrute(n int, k int, row int, column int) float64 {
 	return solve(row, column, k)
 }
 
-func knightProbabilityDP(n int, k int, row int, column int) float64 {
+func KnightProbabilityDP(n int, k int, row int, column int) float64 {
 
 	memoise := make([][][]float64, k+1)
 
@@ -83,7 +83,7 @@ func knightProbabilityDP(n int, k int, row int, column int) float64 {
 	return ans
 }
 
-func knightProbabilityOpt(n int, k int, row int, column int) float64 {
+func KnightProbabilityOpt(n int, k int, row int, column int) float64 {
 
 	memoise := make([][][]float64, 2)
 

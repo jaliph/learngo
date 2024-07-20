@@ -1,6 +1,5 @@
 MCM
 
-
 40, 20, 30, 10, 30
     i            j
     k
@@ -16,7 +15,6 @@ solve(i , k), solve(k + 1, j)
 
 calling
 solve(1, n - 1)
-
 
 
 
