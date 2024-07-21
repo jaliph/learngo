@@ -1,10 +1,13 @@
 package main
 
 import (
+	"basic"
 	"fmt"
-	"stacks"
 )
 
 func main() {
-	fmt.Println(stacks.MaxSumMinProduct([]int{1, 2, 3, 2}))
+	arr := []int{1, 3, 2}
+
+	basic.NextPermutation(arr)
+	fmt.Println(arr)
 }
