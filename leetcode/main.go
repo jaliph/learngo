@@ -1,13 +1,9 @@
 package main
 
 import (
-	"basic"
-	"fmt"
+	graph "graph/dfs"
 )
 
 func main() {
-	arr := []int{1, 3, 2}
-
-	basic.NextPermutation(arr)
-	fmt.Println(arr)
+	graph.CanFinish(2, [][]int{{1, 0}, {0, 1}})
 }

@@ -5,6 +5,7 @@ type Entry struct {
 	val int
 }
 
+// https://leetcode.com/problems/maximum-subarray-min-product/description/
 func MaxSumMinProduct(nums []int) int {
 	const MOD = 1e9 + 7
 	prefix := make([]int, len(nums)+1)

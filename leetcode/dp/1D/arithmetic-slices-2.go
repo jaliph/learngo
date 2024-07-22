@@ -2,7 +2,24 @@ package dp
 
 // https://leetcode.com/problems/arithmetic-slices-ii-subsequence/description/
 
-func numberOfArithmeticSlices2(nums []int) int {
+func NumberOfArithmeticSlicesIntuitive(nums []int) int {
+
+	res := 0
+	n := len(nums)
+	dp := make([]map[int]int, len(nums))
+
+	for i := 0; i < n; i++ {
+		dp[i] = map[int]int{}
+		for j := 0; j < i; j++ {
+			diff := nums[i] - nums[j]
+			dp[i][diff] += 1 + dp[j][diff]
+			res += 1 + dp[j][diff]
+		}
+	}
+	return res - ((n * (n - 1)) / 2) // remove all pairs of 2 length
+}
+
+func NumberOfArithmeticSlices2(nums []int) int {
 	total := 0
 	dp := make([]map[int]int, len(nums))
 
