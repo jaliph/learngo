@@ -7,6 +7,13 @@ import (
 
 // https://leetcode.com/problems/dungeon-game/description/
 
+/*
+[[-10]]                     : ans  = 1 + (-(-10)) = 11 (explanation to first point mentioned)
+[[10]]                      : ans  = 1 as we still need 1 health at first place to get there (explanation to second point mentioned)
+[[-2,-3,3,-5,-10]]          : ans = 1 + (-(-17)) = 18 same as 1st case
+[[2,3,3,5,10]]              : ans = 1 same as 2nd test case, explanation to second point mentioned
+*/
+
 // Binary Search
 func CalculateMinimumHP(dungeon [][]int) int {
 	R, C := len(dungeon), len(dungeon[0])
