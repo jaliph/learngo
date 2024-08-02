@@ -1,9 +1,10 @@
 package main
 
 import (
-	graph "graph/dfs"
+	"fmt"
+	"slidingwindow"
 )
 
 func main() {
-	graph.CanFinish(2, [][]int{{1, 0}, {0, 1}})
+	fmt.Println(slidingwindow.MinSwaps([]int{1, 1, 0, 0, 1}))
 }
