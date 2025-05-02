@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/furthest-building-you-can-reach
 package heap
 
 import "container/heap"
@@ -9,6 +10,8 @@ func FurthestBuilding(heights []int, bricks int, ladders int) int {
 		diff := heights[i] - heights[i-1]
 		if diff > 0 {
 			heap.Push(h, diff)
+
+			// i have used all the ladder, now i need to use bricks
 			if h.Len() > ladders {
 				bricks -= heap.Pop(h).(int)
 			}

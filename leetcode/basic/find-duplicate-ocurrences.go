@@ -2,7 +2,7 @@ package basic
 
 // https://leetcode.com/problems/unique-number-of-occurrences/
 
-func uniqueOccurrences(arr []int) bool {
+func UniqueOccurrences(arr []int) bool {
 	freqMap := map[int]int{}
 	cMap := map[int]struct{}{}
 

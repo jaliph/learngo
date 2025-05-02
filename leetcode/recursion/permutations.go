@@ -39,3 +39,67 @@ func Permute(nums []int) [][]int {
 	}
 	return dfs(nums)
 }
+
+// Recur1
+func Permute1(nums []int) [][]int {
+
+	insertAti := func(arr *[]int, idx int, data int) {
+		if idx == len(*arr) {
+			*arr = append(*arr, data)
+		} else {
+			*arr = append((*arr)[:idx+1], (*arr)[idx:]...)
+			(*arr)[idx] = data
+		}
+	}
+
+	var recur func(perms []int) [][]int
+	recur = func(perms []int) [][]int {
+		if len(perms) == 0 {
+			return [][]int{{}}
+		}
+
+		n := perms[0]
+		sub_perms := recur(perms[1:])
+
+		new_perms := [][]int{}
+		for _, p := range sub_perms {
+			for idx := 0; idx <= len(p); idx++ {
+				copy_perm := make([]int, len(p))
+				copy(copy_perm, p)
+				insertAti(&copy_perm, idx, n)
+				new_perms = append(new_perms, copy_perm)
+			}
+		}
+		return new_perms
+	}
+
+	return recur(nums)
+}
+
+func Permute2(nums []int) [][]int {
+
+	insertAti := func(arr *[]int, idx int, data int) {
+		if idx == len(*arr) {
+			*arr = append(*arr, data)
+		} else {
+			*arr = append((*arr)[:idx+1], (*arr)[idx:]...)
+			(*arr)[idx] = data
+		}
+	}
+
+	perms := [][]int{{}}
+
+	for _, n := range nums {
+		new_perms := [][]int{}
+		for _, p := range perms {
+			for idx := 0; idx <= len(p); idx++ {
+				copy_perm := make([]int, len(p))
+				copy(copy_perm, p)
+				insertAti(&copy_perm, idx, n)
+				new_perms = append(new_perms, copy_perm)
+			}
+		}
+		perms = new_perms
+	}
+	return perms
+}
